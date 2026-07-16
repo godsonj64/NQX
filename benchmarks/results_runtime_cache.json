@@ -1,0 +1,19 @@
+{
+  "cache_over_dense": 0.0625,
+  "configuration": {
+    "batch": 16,
+    "features": 2048,
+    "output": "benchmarks/results_runtime_cache.json",
+    "rank": 64,
+    "repeats": 30,
+    "seed": 0,
+    "warmup": 5
+  },
+  "dense_fp32_weight_bytes": 16777216,
+  "prepared_cache_bytes": 1048576,
+  "prepared_median_seconds": 0.00013565399967774283,
+  "prepared_over_uncached": 0.24519121226162813,
+  "scope": "portable NumPy path only; not a CUDA-kernel benchmark",
+  "speedup": 4.078449593588871,
+  "uncached_median_seconds": 0.0005532579998543952
+}

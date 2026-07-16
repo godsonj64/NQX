@@ -1,0 +1,54 @@
+[build-system]
+# Modified from SamsungLabs/NanoQuant by Godson Johnson for NanoQuant-X, 2026.
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanoquant-x"
+version = "0.4.0"
+description = "NanoQuant-X: exact-objective, packed-bit-aware sub-1-bit LLM quantization"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+benchmark = [
+    "accelerate>=0.20.0",
+    "cut_cross_entropy>=25.1.1",
+    "datasets>=4.0.0",
+    "loguru>=0.7.0",
+    "safetensors>=0.5.0",
+    "torch>=2.6.0",
+    "tqdm>=4.60.0",
+    "transformers==4.51.3",
+]
+llm = [
+    "safetensors>=0.5.0",
+    "accelerate>=0.20.0",
+    "cut_cross_entropy>=25.1.1",
+    "datasets>=4.0.0",
+    "gemlite>=0.4.0",
+    "lm_eval>=0.4.9",
+    "loguru>=0.7.0",
+    "optimum>=1.27.0",
+    "torch>=2.6.0",
+    "tqdm>=4.60.0",
+    "transformers==4.51.3",
+    "zeus-ml",
+]
+kernels = []
+dev = ["pytest", "ruff", "mypy"]
+
+[project.scripts]
+nanoquant = "nanoquant.main:main"
+nqx-ref = "nanoquant.reference.cli:main"
+nqx-bench = "nanoquant.bench.runner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nanoquant = ["kernel/**/*.cu", "kernel/**/*.cuh", "kernel/**/*.h", "kernel/**/*.cpp", "kernel/**/*.sh"]

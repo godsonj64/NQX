@@ -1,0 +1,15 @@
+NanoQuant
+Copyright 2026 Samsung Electronics Co., Ltd.
+
+NanoQuant-X enhancements
+Copyright 2026 Godson Johnson
+
+NanoQuant-X is a derivative work of SamsungLabs/NanoQuant. Modified files add
+exact deployed-objective scale fitting, optional rank scales, packed-bit-aware
+allocation, compact knowledge-distillation targets, safe portable artifacts,
+validation, tests, and documentation.
+
+This product includes software developed by Benjamin Warner (optimi):
+  - src/nanoquant/optimi/
+  Licensed under the MIT License.
+  Original source: https://github.com/warner-benjamin/optimi
